@@ -68,12 +68,12 @@ def doBotStuff(updateId, flood = False, cancion = ''):
                             flood = False
 
                         if datos['isLive'] and flood == False:
-                            texto = "🎤 «%s» de %s\n🎶 “%s”\n👤 %s\n🎧 %s escuchas\n🔴 `EN VIVO`" % (datos['show'], datos['broadcaster'], datos['title'], datos['artist'], datos['listeners'])
+                            texto = "🎤 «%s» de %s\n🎶 “%s”\n👤 %s\n🎧 %s escuchas\n🔴 #ENVIVO" % (datos['show'], datos['broadcaster'], datos['title'], datos['artist'], datos['listeners'])
                             params = { 'chat_id': chatId, 'caption': texto }
                             cover_file = { 'photo': ('file.png', imagen_portada) }
                             response = requests.post(url + 'sendPhoto', params, files=filcover_filee)
                         elif datos['isLive'] != True and flood == False:
-                            texto = "🎶 %s\n👤 %s\n💿 %s\n📃 %s\n🎧 %s escuchas\n⚫️ `DIFERIDO`" % (datos['title'], datos['artist'], datos['album'], datos['license']['shortname'] if datos["license"] != "" else "", datos['listeners'])
+                            texto = "🎶 %s\n👤 %s\n💿 %s\n📃 %s\n🎧 %s escuchas\n📻 #DIFERIDO" % (datos['title'], datos['artist'], datos['album'], datos['license']['shortname'] if datos["license"] != "" else "", datos['listeners'])
                             params = { 'chat_id': chatId, 'caption': texto }
                             cover_file = { 'photo': ('file.png', imagen_portada) }
                             response = requests.post(url + 'sendPhoto', params, files=cover_file)
