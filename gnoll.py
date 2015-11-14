@@ -57,7 +57,7 @@ def doBotStuff(updateId, flood = False, cancion = ''):
                             break
 
                         datos = json.loads( api_radiognu.content.decode('utf-8') )
-                        imagen_portada = base64.b64decode( datos['cover'][22:] )
+                        imagen_portada = base64.b64decode( bytes(datos['cover'][22:], 'utf-8') )
 
                         if cancion == '':
                             cancion = datos['title']
