@@ -12,6 +12,7 @@ strings = ['Aaarghhh!!!', 'Braaiiinnzzz..', 'Grmbblrr..', 'GRRRRRR...!!', 'Bluuu
 url = 'https://api.telegram.org/bot' + token + '/'
 filename = 'offset.txt'  # updateID compensa para prevenir múltiples respuestas
 logfilename = 'log.txt'  # archivo de registros
+cancion = ''
 
 
 # procedimiento para enviar mensaje
@@ -23,7 +24,7 @@ def sendSimpleMessage(chatId, text):
         return
 
 # obtenemos notificaciones y respondemos a los mensajes
-def doBotStuff(updateId, flood = False, cancion = ''):
+def doBotStuff(updateId):
     try:
         params = { 'offset': updateId, 'limit': '100', 'timeout': '60'}
         response = requests.post(url + 'getUpdates', params)
