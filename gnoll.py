@@ -25,6 +25,7 @@ def sendSimpleMessage(chatId, text):
 
 # obtenemos notificaciones y respondemos a los mensajes
 def doBotStuff(updateId):
+    global cancion
     try:
         params = { 'offset': updateId, 'limit': '100', 'timeout': '60'}
         response = requests.post(url + 'getUpdates', params)
