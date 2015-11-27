@@ -63,6 +63,7 @@ def doBotStuff(updateId):
 
                         if cancion == '':
                             cancion = datos['title']
+                            flood = False
                         elif cancion == datos['title']:
                             flood = True
                         else:
